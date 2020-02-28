@@ -1,0 +1,32 @@
+<div class="col-12">
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="question_title"> Question</label>
+                <input type="text" name="question_title" id="question_title"
+                    class="form-control">
+            </div>
+            <div class="option-selector">
+                <select name="select_option" [(ngModel)]="answerType"
+                    (change)="toggleAnswer($event)">
+                    <option [value]="map.value"
+                        *ngFor="let map of mapping">{{map.name}}</option>
+                </select>
+            </div>
+            <div class="">
+                <ng-container #answer [ngComponentOutlet]="type">
+                </ng-container>
+            </div>
+        </div>
+        <div class="card-footer right">
+            <div class="float-right">
+                <div class="btn-group">
+                    <button class="btn btn-sm btn-danger"
+                        (click)="remove()">Delete</button>
+                    <button class="btn btn-sm btn-warning" (click)="clone()">Clone</button>
+                    <button class="btn btn-sm btn-success" (click)="save()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

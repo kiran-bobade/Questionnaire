@@ -1,0 +1,11 @@
+
+
+<div class="container">
+    <button class="btn btn-primary btn-lg" (click)="addQuestion()">Add
+        Question</button>
+    <div class="col-12">
+        <div *ngFor="let question of questions;let i= index">
+            <app-question (saveQ)="save($event)"></app-question>
+        </div>
+    </div>
+</div>

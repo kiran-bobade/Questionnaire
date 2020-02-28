@@ -1,0 +1,12 @@
+<div class="form-check form-check-inline" style="margin: 5px;"
+    *ngFor="let opt of options; let i=index">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+        [value]="opt.value">
+    <input type="text" name="option_{{i}}" [(ngModel)]="opt.value">
+    <span style="color: red;margin: 0 5px;"
+        (click)="removeOption(i)" *ngIf="options.length> 1"> Remove
+    </span>
+</div>
+<div>
+    <button class="btn btn-sm btn-primary" (click)="addOption()">Add Option</button>
+</div>
